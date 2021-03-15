@@ -4,6 +4,8 @@
   :components
   ((:module "src"
     :components ((:file "package")
+                 (:file "constants" :depends-on ("package"))
+                 (:file "stirling" :depends-on ("package" "constants"))
                  (:file "iter" :depends-on ("package")))))
   :in-order-to ((test-op (test-op "cl-factorial/test"))))
 
