@@ -1,3 +1,5 @@
 (defpackage cl-factorial
   (:use :cl)
-  (:export :iter))
+  (:export #:iter
+           #:iter-list
+           #:stirling))

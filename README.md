@@ -14,6 +14,14 @@ This will go into `bignum` territory.
 
 No memoization.
 
+### Exact: iter-list
+Compute a list of consecutive factorials.
+
+```common-lisp
+(cl-factorial:iter-list n-start n-end)
+;; => (n-start! n-start+1! ... n-end-1! n-end!)
+```
+
 ### Double-float: stirling
 The first term of the Stirling expansion.
 
