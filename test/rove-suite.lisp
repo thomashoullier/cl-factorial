@@ -17,5 +17,11 @@
   (testing "iter-list: Exact n= 1 .. 20"
     (let ((iter-factorials (iter-list 1 20)))
       (ok (equal iter-factorials *tabulated-factorials*) "ok")))
+  (testing "iter-some: (1 2 10 15)"
+    (let* ((val-list (list 1 2 10 15))
+           (iter-factorials (iter-some val-list))
+           (tabulated-res (loop for i in val-list
+                                collect (nth (1- i) *tabulated-factorials*))))
+      (ok (equal iter-factorials tabulated-res) "ok")))
   (testing "stirling: no errors?"
     (progn (stirling 1) (stirling 10) (stirling 170)) (pass "ok")))

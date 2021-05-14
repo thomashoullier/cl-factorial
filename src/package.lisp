@@ -2,4 +2,5 @@
   (:use :cl)
   (:export #:iter
            #:iter-list
+           #:iter-some
            #:stirling))
