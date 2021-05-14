@@ -3,7 +3,8 @@ Tools for computing factorials. Nothing fancy.
 
 ## Usage
 
-### Exact: iter
+### Exact
+#### iter
 Usual, simple, factorial computation using iterative multiplication.
 This will go into `bignum` territory.
 
@@ -14,12 +15,21 @@ This will go into `bignum` territory.
 
 No memoization.
 
-### Exact: iter-list
+#### iter-list
 Compute a list of consecutive factorials.
 
 ```common-lisp
 (cl-factorial:iter-list n-start n-end)
 ;; => (n-start! n-start+1! ... n-end-1! n-end!)
+```
+
+#### iter-some
+Compute the factorial of a list of arguments.
+The input list must be sorted in increasing order.
+
+```common-lisp
+(cl-factorial:iter-some (list 1 4 10))
+;; => (1 24 3628800)
 ```
 
 ### Double-float: stirling
