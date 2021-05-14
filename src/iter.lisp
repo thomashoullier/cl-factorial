@@ -12,9 +12,10 @@
 (defun iter-list (n-start n-end)
   "Compute n! from n-start to n-end (included).
    Returns (n-start! n-start+1! ... n-end-1! n-end!)"
-  (let ((res (iter (max (1- n-start) 1))))
-    (loop for n from n-start upto n-end
-          collect (setf res (* res n)))))
+  (if (= n-start 0) (cons 1 (iter-list (1+ n-start) n-end))
+      (let ((res (iter (max (1- n-start) 1))))
+        (loop for n from n-start upto n-end
+              collect (setf res (* res n))))))
 
 ;;; iter-some: Compute only some factorials.
 (defun iter-some (sorted-arglst)
